@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\zachwebapi_01.props" />
+</Project>

@@ -1,0 +1,54 @@
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\appsettings.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.staticwebassets.runtime.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.exe
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.deps.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.runtimeconfig.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.dll
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\bin\Debug\net7.0\webapp_02.pdb
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.csproj.AssemblyReference.cache
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.AssemblyInfoInputs.cache
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.AssemblyInfo.cs
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.csproj.CoreCompileInputs.cache
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.webapp_02.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.build.webapp_02.props
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.webapp_02.props
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.webapp_02.props
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\scopedcss\bundle\webapp_02.styles.css
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.dll
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\refint\webapp_02.dll
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.pdb
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\webapp_02.genruntimeconfig.cache
+C:\Users\jmulh\Documents\code\2023_class\webapp_02\obj\Debug\net7.0\ref\webapp_02.dll
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\appsettings.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.staticwebassets.runtime.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.exe
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.deps.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.runtimeconfig.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.dll
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\bin\Debug\net7.0\webapp_02.pdb
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.csproj.AssemblyReference.cache
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.AssemblyInfoInputs.cache
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.AssemblyInfo.cs
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.csproj.CoreCompileInputs.cache
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.webapp_02.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.build.webapp_02.props
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.webapp_02.props
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.webapp_02.props
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\scopedcss\bundle\webapp_02.styles.css
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.dll
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\refint\webapp_02.dll
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.pdb
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\webapp_02.genruntimeconfig.cache
+C:\Users\zacha\OneDrive\Desktop\Class Templates\week_18_files\week_18_files\webapp_02\obj\Debug\net7.0\ref\webapp_02.dll
