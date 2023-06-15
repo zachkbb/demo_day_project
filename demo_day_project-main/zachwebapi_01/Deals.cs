@@ -107,28 +107,37 @@ namespace webapi_01
             return deals;
         }
 
-        // public static int InsertEmployee(Employee employee, SqlConnection sqlConnection)
-        // {
-        //     string sql = "insert into Employee (LastName, FirstName, Salary) values (@LastName, @FirstName, @Salary);";
+        public static int InsertDeal(Deals deals, SqlConnection sqlConnection)
+        {
+            string sql = "insert into Deals (RestaurantId, DayOfWeekId, DealName, DealDay, StartDate, EndDate) values (@RestaurantId, @DayOfWeekId, @DealName, @DealDay, @StartDate, @EndDate);";
 
-        //     SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
-        //     sqlCommand.CommandType = System.Data.CommandType.Text;
+            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.Text;
 
-        //     SqlParameter paramLastName = new SqlParameter("@LastName", employee.LastName);
-        //     SqlParameter paramFirstName = new SqlParameter("@FirstName", employee.FirstName);
-        //     SqlParameter salary = new SqlParameter("@Salary", employee.Salary);
+            SqlParameter paramRestaurantId = new SqlParameter("@RestaurantId", deals.RestaurantId);
+            SqlParameter paramDayOfWeekId = new SqlParameter("@DayOfWeekId", deals.DayOfWeekId);
+            SqlParameter paramDealName = new SqlParameter("@DealName", deals.DealName);
+            SqlParameter paramDealDay = new SqlParameter("@DealDay", deals.DealDay);
+            SqlParameter paramStartDate = new SqlParameter("@StartDate", deals.DealDay);
+            SqlParameter paramEndDate = new SqlParameter("@EndDate", deals.DealDay);
 
-        //     paramLastName.DbType = System.Data.DbType.String;
-        //     paramFirstName.DbType = System.Data.DbType.String;
-        //     salary.DbType = System.Data.DbType.Decimal;
+            paramRestaurantId.DbType = System.Data.DbType.Int32;
+            paramDayOfWeekId.DbType = System.Data.DbType.Int32;
+            paramDealName.DbType = System.Data.DbType.String;
+            paramDealDay.DbType = System.Data.DbType.String;
+            paramStartDate.DbType = System.Data.DbType.Date; //may need to change this variable type
+            paramEndDate.DbType = System.Data.DbType.Date; //may need to change this variable type
 
-        //     sqlCommand.Parameters.Add(paramLastName);
-        //     sqlCommand.Parameters.Add(paramFirstName);
-        //     sqlCommand.Parameters.Add(salary);
+            sqlCommand.Parameters.Add(paramRestaurantId);
+            sqlCommand.Parameters.Add(paramDayOfWeekId);
+            sqlCommand.Parameters.Add(paramDealName);
+            sqlCommand.Parameters.Add(paramDealDay);
+            sqlCommand.Parameters.Add(paramStartDate);
+            sqlCommand.Parameters.Add(paramEndDate);
 
-        //     int rowsAffected = sqlCommand.ExecuteNonQuery();
-        //     return rowsAffected;
-        //}
+            int rowsAffected = sqlCommand.ExecuteNonQuery();
+            return rowsAffected;
+        }
 
         // public static int UpdateEmployee(Employee employee, SqlConnection sqlConnection)
         // {

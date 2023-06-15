@@ -54,39 +54,39 @@ public class DealsController : ControllerBase
         return response;
     }
 
-    // [HttpGet]
-    // [Route("/InsertEmployee")]
-    // public Response InsertEmployee(string lastName, string firstName, string salary)
-    // {
-    //     Response response = new Response();
-    //     try
-    //     {
-    //         List<Employee> employees = new List<Employee>();
+    [HttpGet]
+    [Route("/InsertDeal")]
+    public Response InsertDeal(int RestaurantId, int DayOfWeekId, string DealName, string DealDay, DateTime StartDate, DateTime EndDate)
+    {
+        Response response = new Response();
+        try
+        {
+            List<Deals> deals = new List<Deals>();
 
-    //         Employee employee = new Employee(lastName, firstName, Convert.ToDecimal(salary));
+            Deals deal = new Deals(RestaurantId, DayOfWeekId, DealName, DealDay, StartDate, EndDate);
 
-    //         int rowsAffected = 0;
+            int rowsAffected = 0;
 
-    //         string connectionString = GetConnectionString();
-    //         using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-    //         {
-    //             sqlConnection.Open();
-    //             rowsAffected = Employee.InsertEmployee(employee, sqlConnection);
-    //             employees = Employee.SearchEmployees(sqlConnection);
-    //         }
+            string connectionString = GetConnectionString();
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                rowsAffected = Deals.InsertDeal(deal, sqlConnection);
+                deals = Deals.SearchDeals(sqlConnection);
+            }
 
-    //         response.Result = (rowsAffected == 1) ? "success" : "failure";
-    //         response.Message = $"{rowsAffected} rows affected.";
-    //         response.Employees = employees;
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         response.Result = "failure";
-    //         response.Message = e.Message;
-    //     }
+            response.Result = (rowsAffected == 1) ? "success" : "failure";
+            response.Message = $"{rowsAffected} rows affected.";
+            response.Deals = deals;
+        }
+        catch (Exception e)
+        {
+            response.Result = "failure";
+            response.Message = e.Message;
+        }
 
-    //     return response;
-    // }
+        return response;
+    }
 
     // [HttpGet]
     // [Route("/UpdateEmployee")]
