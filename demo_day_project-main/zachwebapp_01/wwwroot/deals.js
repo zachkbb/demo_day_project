@@ -13,13 +13,25 @@ function zachwebapp_01() {
     var buttonInsert = document.getElementById("button-insert");
     var buttonInsertCancel = document.getElementById("button-insert-cancel");
 
+    var buttonUpdate = document.getElementById("button-update");
+    var buttonUpdateCancel = document.getElementById("button-update-cancel");
+
+    var buttonDelete = document.getElementById("button-delete");
+    var buttonDeleteCancel = document.getElementById("button-delete-cancel");
+
     //Event listeners
 
     buttonSearch.addEventListener("click", searchDeals);
-    buttonSearchClear.addEventListener("click", searchClear());
+    buttonSearchClear.addEventListener("click", searchClear);
 
-    buttonInsert.addEventListener("click", insertDeal());
-    buttonInsertCancel.addEventListener("click", insertDealCancel());
+    buttonInsert.addEventListener("click", insertDeal);
+    buttonInsertCancel.addEventListener("click", insertDealCancel);
+
+    buttonUpdate.addEventListener("click", updateDeal);
+    buttonUpdateCancel.addEventListener("click", updateDealCancel);
+
+    buttonDelete.addEventListener("click", deleteDeal);
+    buttonDeleteCancel.addEventListener("click", deleteDealCancel);
 
 
        //Functions
@@ -65,7 +77,9 @@ function zachwebapp_01() {
     
             dealTable.innerHTML = dealTableText;
         };
-    
+
+       };
+
         function searchClear() {
             textSearch.value = "";
             searchDeals();
@@ -80,7 +94,7 @@ function zachwebapp_01() {
             var textStartDate = document.getElementById("text-insert-start-date");
             var textEndDate = document.getElementById("text-insert-end-date");
 
-            var url = 'http://localhost:5120/InsertDeal?RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDayOfWeekId.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate' + textEndDate.value;
+            var url = 'http://localhost:5120/InsertDeal?RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDayOfWeekId.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
     
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = doAfterInsertDeal;
@@ -133,7 +147,113 @@ function zachwebapp_01() {
     
         };
 
-    };
+        function updateDeal() {
+
+            var textDealId = document.getElementById("text-update-deal-id");
+            var textRestaurantId = document.getElementById("text-update-restaurant-id");
+            var textDayOfWeekId = document.getElementById("text-update-day-of-week-id");
+            var textDealName = document.getElementById("text-update-deal-name");
+            var textDealDay = document.getElementById("text-update-deal-day");
+            var textStartDate = document.getElementById("text-update-start-date");
+            var textEndDate = document.getElementById("text-update-end-date");
+    
+            var url = 'http://localhost:5120/UpdateDeals?DealId=' + textDealId.value + '&RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDayOfWeekId.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
+    
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = doAfterUpdateDeal;
+            xhr.open('GET', url);
+            xhr.send(null);
+    
+            function doAfterUpdateDeal() {
+                var DONE = 4; // readyState 4 means the request is done.
+                var OK = 200; // status 200 is a successful return.
+                if (xhr.readyState === DONE) {
+                    if (xhr.status === OK) {
+    
+                        var response = JSON.parse(xhr.responseText);
+    
+                        if (response.result === "success") {
+                            showDeals(response.employees);
+                        } else {
+                            alert("API Error: " + response.message);
+                        }
+                    } else {
+                        alert("Server Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                }
+            };
+    
+            textDealId.value = "";
+            textRestaurantId.value = "";
+            textDayOfWeekId.value = "";
+            textDealName.value = "";
+            textDealDay.value = "";
+            textStartDate.value = "";
+            textEndDate.value = "";
+    
+        };
+
+        function updateDealCancel() {
+
+            var textDealId = document.getElementById("text-update-deal-id");
+            var textRestaurantId = document.getElementById("text-update-restaurant-id");
+            var textDayOfWeekId = document.getElementById("text-update-day-of-week-id");
+            var textDealName = document.getElementById("text-update-deal-name");
+            var textDealDay = document.getElementById("text-update-deal-day");
+            var textStartDate = document.getElementById("text-update-start-date");
+            var textEndDate = document.getElementById("text-update-end-date");
+    
+            textDealId.value = "";
+            textRestaurantId.value = "";
+            textDayOfWeekId.value = "";
+            textDealName.value = "";
+            textDealDay.value = "";
+            textStartDate.value = "";
+            textEndDate.value = "";
+    
+        };
+
+        function deleteDeal() {
+
+            var textDealId = document.getElementById("text-delete-deal-id");
+    
+            var url = 'http://localhost:5120/DeleteDeals?DealId=' + textDealId.value;
+    
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = doAfterDeleteDeal;
+            xhr.open('GET', url);
+            xhr.send(null);
+    
+            function doAfterDeleteDeal() {
+                var DONE = 4; // readyState 4 means the request is done.
+                var OK = 200; // status 200 is a successful return.
+                if (xhr.readyState === DONE) {
+                    if (xhr.status === OK) {
+    
+                        var response = JSON.parse(xhr.responseText);
+    
+                        if (response.result === "success") {
+                            showDeals(response.deals);
+                        } else {
+                            alert("API Error: " + response.message);
+                        }
+                    } else {
+                        alert("Server Error: " + xhr.status + " " + xhr.statusText);
+                    }
+                }
+            };
+    
+            textDealId.value = "";
+    
+        };
+
+        function deleteDealCancel() {
+            var textDealId = document.getElementById("text-delete-deal-id");
+            textDealId.value = "";
+        };
+    
+
+    
 
     // onload
     searchDeals();

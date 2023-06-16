@@ -56,13 +56,13 @@ public class DealsController : ControllerBase
 
     [HttpGet]
     [Route("/InsertDeal")]
-    public Response InsertDeal(int RestaurantId, int DayOfWeekId, string DealName, string DealDay, DateTime StartDate, DateTime EndDate)
+    public Response InsertDeal(int RestaurantId, int DayOfWeekId, string DealName, string DealDay, string StartDate, string EndDate)
     {
         Response response = new Response();
         try
         {
             List<Deals> deals = new List<Deals>();
-
+            
             Deals deal = new Deals(RestaurantId, DayOfWeekId, DealName, DealDay, StartDate, EndDate);
 
             int rowsAffected = 0;
@@ -88,71 +88,71 @@ public class DealsController : ControllerBase
         return response;
     }
 
-    // [HttpGet]
-    // [Route("/UpdateEmployee")]
-    // public Response UpdateEmployee(string employeeId, string lastName, string firstName, string salary)
-    // {
-    //     Response response = new Response();
+    [HttpGet]
+    [Route("/UpdateDeals")]
+    public Response UpdateDeals(int DealId, int RestaurantId, int DayOfWeekId, string DealName, string DealDay, string StartDate, string EndDate)
+    {
+        Response response = new Response();
 
-    //     try
-    //     {
-    //         List<Employee> employees = new List<Employee>();
-    //         Employee employee = new Employee(Convert.ToInt32(employeeId), lastName, firstName, Convert.ToDecimal(salary));
+        try
+        {
+            List<Deals> deals = new List<Deals>();
+            Deals deal = new Deals(Convert.ToInt32(DealId), Convert.ToInt32(RestaurantId), Convert.ToInt32(DayOfWeekId), DealName, DealDay, StartDate, EndDate);
 
-    //         int rowsAffected = 0;
+            int rowsAffected = 0;
 
-    //         string connectionString = GetConnectionString();
-    //         using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-    //         {
-    //             sqlConnection.Open();
-    //             rowsAffected = Employee.UpdateEmployee(employee, sqlConnection);
-    //             employees = Employee.SearchEmployees(sqlConnection);
-    //         }
+            string connectionString = GetConnectionString();
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                rowsAffected = Deals.UpdateDeals(deal, sqlConnection);
+                deals = Deals.SearchDeals(sqlConnection);
+            }
 
-    //         response.Result = (rowsAffected == 1) ? "success" : "failure";
-    //         response.Message = $"{rowsAffected} rows affected.";
-    //         response.Employees = employees;
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         response.Result = "failure";
-    //         response.Message = e.Message;
-    //     }
+            response.Result = (rowsAffected == 1) ? "success" : "failure";
+            response.Message = $"{rowsAffected} rows affected.";
+            response.Deals = deals;
+        }
+        catch (Exception e)
+        {
+            response.Result = "failure";
+            response.Message = e.Message;
+        }
 
-    //     return response;
-    // }
+        return response;
+    }
 
-    // [HttpGet]
-    // [Route("/DeleteEmployee")]
-    // public Response DeleteEmployee(string employeeId)
-    // {
-    //     Response response = new Response();
+    [HttpGet]
+    [Route("/DeleteDeals")]
+    public Response DeleteDeals(string DealId)
+    {
+        Response response = new Response();
 
-    //     try
-    //     {
-    //         List<Employee> employees = new List<Employee>();
-    //         int rowsAffected = 0;
+        try
+        {
+            List<Deals> deals = new List<Deals>();
+            int rowsAffected = 0;
 
-    //         string connectionString = GetConnectionString();
-    //         using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-    //         {
-    //             sqlConnection.Open();
-    //             rowsAffected = Employee.DeleteEmployee(Convert.ToInt32(employeeId), sqlConnection);
-    //             employees = Employee.SearchEmployees(sqlConnection);
-    //         }
+            string connectionString = GetConnectionString();
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                rowsAffected = Deals.DeleteDeal(Convert.ToInt32(DealId), sqlConnection);
+                deals = Deals.SearchDeals(sqlConnection);
+            }
 
-    //         response.Result = (rowsAffected == 1) ? "success" : "failure";
-    //         response.Message = $"{rowsAffected} rows affected.";
-    //         response.Employees = employees;
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         response.Result = "failure";
-    //         response.Message = e.Message;
-    //     }
+            response.Result = (rowsAffected == 1) ? "success" : "failure";
+            response.Message = $"{rowsAffected} rows affected.";
+            response.Deals = deals;
+        }
+        catch (Exception e)
+        {
+            response.Result = "failure";
+            response.Message = e.Message;
+        }
 
-    //     return response;
-    // }
+        return response;
+    }
 
     static string GetConnectionString()
     {
