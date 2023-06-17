@@ -65,12 +65,12 @@ function zachwebapp_01() {
         };
 
         function showDeals(deals) {
-            var dealTableText = '<table class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
+            var dealTableText = '<table style="text-align: left;" class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
     
             for (var i = 0; i < deals.length; i++) {
                 var deal = deals[i];
     
-                dealTableText = dealTableText + '<tr><th scope="row">' + deal.dealId + '</th><td>' + deal.restaurantId + '</td><td>' + deal.dayOfWeekId + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.StartDate + '</td><td>' + deal.EndDate + '</td></tr>'; 
+                dealTableText = dealTableText + '<tr><th scope="row">' + deal.dealId + '</th><td>' + deal.restaurantId + '</td><td>' + deal.dayOfWeekId + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.startDate.split(' ')[0] + '</td><td>' + deal.endDate.split(' ')[0] + '</td></tr>'; 
             }
     
             dealTableText = dealTableText + '</tbody></table>';
@@ -88,13 +88,12 @@ function zachwebapp_01() {
         function insertDeal() {
 
             var textRestaurantId = document.getElementById("text-insert-restaurant-id");
-            var textDayOfWeekId = document.getElementById("text-insert-day-of-week-id");
             var textDealName = document.getElementById("text-insert-deal-name");
             var textDealDay = document.getElementById("text-insert-deal-day");
             var textStartDate = document.getElementById("text-insert-start-date");
             var textEndDate = document.getElementById("text-insert-end-date");
 
-            var url = 'http://localhost:5120/InsertDeal?RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDayOfWeekId.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
+            var url = 'http://localhost:5120/InsertDeal?RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDealDay.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
     
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = doAfterInsertDeal;
@@ -121,7 +120,6 @@ function zachwebapp_01() {
             };
     
             textRestaurantId.value = "";
-            textDayOfWeekId.value = "";
             textDealName.value = "";
             textDealDay.value = "";
             textStartDate.value = "";
@@ -132,14 +130,12 @@ function zachwebapp_01() {
         function insertDealCancel() {
 
             var textRestaurantId = document.getElementById("text-insert-restaurant-id");
-            var textDayOfWeekId = document.getElementById("text-insert-day-of-week-id");
             var textDealName = document.getElementById("text-insert-deal-name");
             var textDealDay = document.getElementById("text-insert-deal-day");
             var textStartDate = document.getElementById("text-insert-start-date");
             var textEndDate = document.getElementById("text-insert-end-date");
     
             textRestaurantId.value = "";
-            textDayOfWeekId.value = "";
             textDealName.value = "";
             textDealDay.value = "";
             textStartDate.value = "";
@@ -151,13 +147,12 @@ function zachwebapp_01() {
 
             var textDealId = document.getElementById("text-update-deal-id");
             var textRestaurantId = document.getElementById("text-update-restaurant-id");
-            var textDayOfWeekId = document.getElementById("text-update-day-of-week-id");
             var textDealName = document.getElementById("text-update-deal-name");
             var textDealDay = document.getElementById("text-update-deal-day");
             var textStartDate = document.getElementById("text-update-start-date");
             var textEndDate = document.getElementById("text-update-end-date");
     
-            var url = 'http://localhost:5120/UpdateDeals?DealId=' + textDealId.value + '&RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDayOfWeekId.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
+            var url = 'http://localhost:5120/UpdateDeals?DealId=' + textDealId.value + '&RestaurantId=' + textRestaurantId.value + '&DayOfWeekId=' + textDealDay.value + '&DealName=' + textDealName.value + '&DealDay=' + textDealDay.value + '&StartDate=' + textStartDate.value + '&EndDate=' + textEndDate.value;
     
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = doAfterUpdateDeal;
@@ -185,7 +180,6 @@ function zachwebapp_01() {
     
             textDealId.value = "";
             textRestaurantId.value = "";
-            textDayOfWeekId.value = "";
             textDealName.value = "";
             textDealDay.value = "";
             textStartDate.value = "";
@@ -197,7 +191,6 @@ function zachwebapp_01() {
 
             var textDealId = document.getElementById("text-update-deal-id");
             var textRestaurantId = document.getElementById("text-update-restaurant-id");
-            var textDayOfWeekId = document.getElementById("text-update-day-of-week-id");
             var textDealName = document.getElementById("text-update-deal-name");
             var textDealDay = document.getElementById("text-update-deal-day");
             var textStartDate = document.getElementById("text-update-start-date");
@@ -205,7 +198,6 @@ function zachwebapp_01() {
     
             textDealId.value = "";
             textRestaurantId.value = "";
-            textDayOfWeekId.value = "";
             textDealName.value = "";
             textDealDay.value = "";
             textStartDate.value = "";

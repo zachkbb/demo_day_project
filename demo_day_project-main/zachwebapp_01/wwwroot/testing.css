@@ -1,0 +1,20 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+  }
+  
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
+
+  table, th, td {
+    border: 1px solid;
+    height: 25px;
+    text-align: left;
+  }

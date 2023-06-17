@@ -13,15 +13,16 @@
 <body>
     <nav>
       <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
+      <a href="./login.html">Login</a>
       <a href="./deals.html">Deals</a>
       <a href="./contact.html">Contact</a>
+      <a href="./testing.html">Testing</a>
     </nav>
     <div class="container">
 
-        <div class="row my-header">
+        <div style="font-size:300%; font-family:verdana;" class="row my-header">
             <div class="col col-12">
-                Restaurant Deal & Special Management System
+                Savoree
             </div>
         </div>
 
@@ -50,15 +51,11 @@
         <div class="row row-insert-update-delete">
 
             <div class="col col-4">
-                <h4>Insert Deal</h4>
+                <h4>Create New Deal</h4>
                 <form>
                     <div class="mb-2">
                         <label for="text-insert-restaurant-id" class="form-label">Restaurant ID</label>
                         <input id="text-insert-restaurant-id" type="text" class="form-control">
-                    </div>
-                    <div class="mb-2">
-                        <label for="text-insert-day-of-week-id" class="form-label">Day of Week ID</label>
-                        <input id="text-insert-day-of-week-id" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="text-insert-deal-name" class="form-label">Deal Name</label>
@@ -66,7 +63,16 @@
                     </div>
                     <div class="mb-3">
                         <label for="text-insert-deal-day" class="form-label">Deal Day</label>
-                        <input id="text-insert-deal-day" type="text" class="form-control">
+                        <select id="text-insert-deal-day" class="form-select">
+                          <option value="1">Sunday</option>
+                          <option value="2">Monday</option>
+                          <option value="3">Tuesday</option>
+                          <option value="4">Wednesday</option>
+                          <option value="5">Thursday</option>
+                          <option value="6">Friday</option>
+                          <option value="7">Saturday</option>
+                          <option value="8">Everyday</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="text-insert-start-date" class="form-label">Start Date</label>
@@ -98,17 +104,22 @@
                         <label for="text-update-restaurant-id" class="form-label">Restaurant ID</label>
                         <input id="text-update-restaurant-id" type="text" class="form-control">
                     </div>
-                    <div class="mb-2">
-                        <label for="text-update-day-of-week-id" class="form-label">Day of Week ID</label>
-                        <input id="text-update-day-of-week-id" type="text" class="form-control">
-                    </div>
                     <div class="mb-3">
                         <label for="text-update-deal-name" class="form-label">Deal Name</label>
                         <input id="text-update-deal-name" type="text" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="text-update-deal-day" class="form-label">Deal Day</label>
-                        <input id="text-update-deal-day" type="text" class="form-control">
+                        <select id="text-update-deal-day" class="form-select">
+                            <option value="1">Sunday</option>
+                            <option value="2">Monday</option>
+                            <option value="3">Tuesday</option>
+                            <option value="4">Wednesday</option>
+                            <option value="5">Thursday</option>
+                            <option value="6">Friday</option>
+                            <option value="7">Saturday</option>
+                            <option value="8">Everyday</option>
+                          </select>
                     </div>
                     <div class="mb-3">
                         <label for="text-update-start-date" class="form-label">Start Date</label>

@@ -70,7 +70,15 @@ namespace webapi_01
         {
             List<Deals> deals = new List<Deals>();
 
-            string sql = "select p.DealId, d.RestaurantId, d.DayOfWeekId, d.DealName, d.DealDay, d.StartDate, d.EndDate, p.[Count] from (Select d.DealId, count(*) over () as [Count] From Deals d join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId where d.DealName like '%' + @Search + '%' or dw.DayName like '%' + @Search + '%' order by DealId offset @PageSize * (@PageNumber - 1) rows fetch next @PageSize rows only) p join Deals d on p.DealId = d.DealId order by 1;";
+            string sql = "select p.DealId, d.RestaurantId, d.DayOfWeekId, d.DealName, "  
+            + "dw.DayName as DealDay, d.StartDate, d.EndDate, p.[Count] from (Select d.DealId, count(*) over () as [Count] "
+            + "From Deals d "
+            + "join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "  
+            + "where d.DealName like '%' + @Search + '%' or dw.DayName like '%' + @Search + '%' " 
+            + "order by DealId offset @PageSize * (@PageNumber - 1) rows fetch next @PageSize rows only) p " 
+            + "join Deals d on p.DealId = d.DealId "
+            + "join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "
+            + "order by 1;";
 
             SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
             sqlCommand.CommandType = System.Data.CommandType.Text;
