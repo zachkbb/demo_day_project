@@ -10,6 +10,8 @@ namespace webapi_01
         public string? Message { get; set; }
         public List<Employee>? Employees { get; set; }
         public List<Deals>? Deals { get; set; }
+        public List<CustomerPage>? CustomerPage { get; set; }
+
     }
 }
 
