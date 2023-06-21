@@ -1,43 +1,42 @@
 body {
-    background-color: darkgrey;
+    background-color:#E3D26F;
     text-align: center;
 }
 
 
 .my-header,
 .my-footer {
-    background-color: darkgray;
+    background-color: #CA895F;
     text-align: center;
     color: white;
 }
 
-.col-employee-table {
-    background-color: white;
-    padding-top: 20px;
-    text-align: left;
-}
-
 .my-right {
-    background-color: lightgray;
+    background-color: CA895F;
     text-align: center;
     padding-top: 20px;
 }
 
-.row-insert-update-delete {
-    background-color: lightgray;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+.row-login {
+    background-color: #A15E49;
+    height: 300px;
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 
 h4 {
     text-align: center;
+    margin: auto;
+    width: 75%;
 }
 
 form {
     padding-left: 10px;
     padding-right: 10px;
     text-align: left;
+    width: 75%;
+    margin: auto;
 }
