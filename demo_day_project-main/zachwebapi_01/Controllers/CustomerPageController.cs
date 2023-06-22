@@ -54,6 +54,46 @@ public class CustomerPageController : ControllerBase
         return response;
     }
 
+    [HttpGet]
+    [Route("/SearchTodaysDeals")]
+    public Response SearchTodaysDeals(string pageSize = "10", string pageNumber = "1", string search = "")
+    {
+        Response response = new Response();
+        try
+        {
+            List<CustomerPage> customerPage = new List<CustomerPage>();
+
+            string connectionString = GetConnectionString();
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                sqlConnection.Open();
+                customerPage = CustomerPage.SearchTodaysDeals(sqlConnection, search, Convert.ToInt32(pageSize), Convert.ToInt32(pageNumber));
+            }
+
+            string message = "";
+
+            if (customerPage.Count() > 0)
+            {
+                int customerDealCount = customerPage[0].CustomerDealCount;
+                message = $"Found {customerDealCount} deals!";
+            }
+            else
+            {
+                message = "No deals met your search criteria.";
+            }
+
+            response.Result = "success";
+            response.Message = message;
+            response.CustomerPage = customerPage;
+        }
+        catch (Exception e)
+        {
+            response.Result = "failure";
+            response.Message = e.Message;
+        }
+        return response;
+    }
+
     static string GetConnectionString()
     {
         string serverName = @"DESKTOP-S1T2KVQ\SQLEXPRESS"; //Change to the "Server Name" you see when you launch SQL Server Management Studio.

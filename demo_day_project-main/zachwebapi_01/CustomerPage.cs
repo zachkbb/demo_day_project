@@ -13,6 +13,7 @@ namespace webapi_01
         public string? EndDate { get; set; }
         public int CustomerDealCount { get; set; }
 
+
         public CustomerPage()
         {
         }
@@ -83,6 +84,61 @@ namespace webapi_01
             sqlCommand.Parameters.Add(paramSearch);
             sqlCommand.Parameters.Add(paramPageSize);
             sqlCommand.Parameters.Add(paramPageNumber);
+
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+            while (sqlDataReader.Read())
+            {
+                CustomerPage customerPages = new CustomerPage();
+
+                customerPages.RestaurantName = (sqlDataReader["RestaurantName"].ToString());
+                customerPages.DealName = sqlDataReader["DealName"].ToString();
+                customerPages.DealDay = sqlDataReader["DealDay"].ToString();
+                customerPages.StartDate = (sqlDataReader["StartDate"].ToString());
+                customerPages.EndDate = (sqlDataReader["EndDate"].ToString());
+
+                customerPage.Add(customerPages);
+            }
+
+            return customerPage;
+        }
+
+        public static List<CustomerPage> SearchTodaysDeals(SqlConnection sqlConnection, string search = "", int pageSize = 10, int pageNumber = 1)
+        {
+            int day = (int)DateTime.Now.DayOfWeek + 1;
+
+            List<CustomerPage> customerPage = new List<CustomerPage>();
+
+            string sql = "select d.DealName, r.RestaurantName, "  
+            + " dw.DayName as DealDay, d.StartDate, d.EndDate, p.[Count] " 
+            + " from (Select d.DealId, count(*) over () as [Count] "
+            + " From Deals d "
+            + " join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "
+            + " join Restaurants r on r.RestaurantId = d.RestaurantId "  
+            + " where (d.DealName like '%' + @Search + '%' or dw.DayName like '%' + @Search + '%' or r.RestaurantName like '%' + @Search + '%') "
+            + " and (d.DayOfWeekId = @Day or d.DayOfWeekId = 8)" 
+            + " order by DealId offset @PageSize * (@PageNumber - 1) rows fetch next @PageSize rows only) p "
+            + " join Deals d on d.DealId = p.DealId " 
+            + " join Restaurants r on r.RestaurantId = d.RestaurantId "
+            + " join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "
+            + " order by 1;";
+
+            SqlCommand sqlCommand = new SqlCommand(sql, sqlConnection);
+            sqlCommand.CommandType = System.Data.CommandType.Text;
+
+            SqlParameter paramSearch = new SqlParameter("@Search", search);
+            SqlParameter paramPageSize = new SqlParameter("@PageSize", pageSize);
+            SqlParameter paramPageNumber = new SqlParameter("@PageNumber", pageNumber);
+            SqlParameter paramDay = new SqlParameter("@Day", day);
+
+            paramSearch.DbType = System.Data.DbType.String;
+            paramPageSize.DbType = System.Data.DbType.Int32;
+            paramPageNumber.DbType = System.Data.DbType.Int32;
+            paramDay.DbType = System.Data.DbType.Int32;
+
+            sqlCommand.Parameters.Add(paramSearch);
+            sqlCommand.Parameters.Add(paramPageSize);
+            sqlCommand.Parameters.Add(paramPageNumber);
+            sqlCommand.Parameters.Add(paramDay);
 
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
             while (sqlDataReader.Read())
