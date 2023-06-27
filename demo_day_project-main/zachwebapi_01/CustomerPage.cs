@@ -11,6 +11,7 @@ namespace webapi_01
         public string? DealDay { get; set; }
         public string? StartDate { get; set; }
         public string? EndDate { get; set; }
+        public string? Website { get; set; }
         public int CustomerDealCount { get; set; }
 
 
@@ -18,13 +19,14 @@ namespace webapi_01
         {
         }
 
-        public CustomerPage(string restaurantName, string dealName, string dealDay, string startDate, string endDate)
+        public CustomerPage(string restaurantName, string dealName, string dealDay, string startDate, string endDate, string webSite)
         {
             RestaurantName = restaurantName;
             DealName = dealName;
             DealDay = dealDay;
             StartDate = startDate;
             EndDate = endDate;
+            Website = webSite;
         }
 
         //got rid of redundant constructor right here
@@ -58,7 +60,7 @@ namespace webapi_01
             List<CustomerPage> customerPage = new List<CustomerPage>();
 
             string sql = "select d.DealName, r.RestaurantName, "  
-            + " dw.DayName as DealDay, d.StartDate, d.EndDate, p.[Count] " 
+            + " dw.DayName as DealDay, d.StartDate, d.EndDate, r.Website, p.[Count] " 
             + " from (Select d.DealId, count(*) over () as [Count] "
             + " From Deals d "
             + " join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "
@@ -95,6 +97,8 @@ namespace webapi_01
                 customerPages.DealDay = sqlDataReader["DealDay"].ToString();
                 customerPages.StartDate = (sqlDataReader["StartDate"].ToString());
                 customerPages.EndDate = (sqlDataReader["EndDate"].ToString());
+                customerPages.Website = (sqlDataReader["Website"].ToString());
+
 
                 customerPage.Add(customerPages);
             }
@@ -109,7 +113,7 @@ namespace webapi_01
             List<CustomerPage> customerPage = new List<CustomerPage>();
 
             string sql = "select d.DealName, r.RestaurantName, "  
-            + " dw.DayName as DealDay, d.StartDate, d.EndDate, p.[Count] " 
+            + " dw.DayName as DealDay, d.StartDate, d.EndDate, r.Website, p.[Count] " 
             + " from (Select d.DealId, count(*) over () as [Count] "
             + " From Deals d "
             + " join DaysOfWeek dw on dw.DayOfWeekId = d.DayOfWeekId "
@@ -150,6 +154,8 @@ namespace webapi_01
                 customerPages.DealDay = sqlDataReader["DealDay"].ToString();
                 customerPages.StartDate = (sqlDataReader["StartDate"].ToString());
                 customerPages.EndDate = (sqlDataReader["EndDate"].ToString());
+                customerPages.Website = (sqlDataReader["Website"].ToString());
+
 
                 customerPage.Add(customerPages);
             }

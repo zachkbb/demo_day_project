@@ -54,18 +54,19 @@ function zachwebapp_01() {
     };
 
     function showDeals(deals) {
-        var dealTableText = '<table style="text-align: left;" class="table table-striped table-sm"><thead><tr><th scope="col">Restaurant Name</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
-
+        var dealTableText = '<table id="table-striped;" style="text-align: left; border: 1px solid black !important;" class="table table-striped"><thead><tr><th scope="col">Restaurant Name</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th><th scope="col">Website</th></tr></thead><tbody>';
+      
         for (var i = 0; i < deals.length; i++) {
-            var deal = deals[i];
-
-            dealTableText = dealTableText + '</th><td>' + deal.restaurantName + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.startDate.split(' ')[0] + '</td><td>' + deal.endDate.split(' ')[0] + '</td></tr>'; 
+          var deal = deals[i];
+      
+          dealTableText = dealTableText + '</th><td>' + deal.restaurantName + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.startDate.split(' ')[0] + '</td><td>' + deal.endDate.split(' ')[0] + '</td><td><a target=\"_blank\" href=\"' + deal.website + '\">Go to website</a></td></tr>';
         }
-
+      
         dealTableText = dealTableText + '</tbody></table>';
-
+      
         dealTable.innerHTML = dealTableText;
-    };
+      }
+      
 
         function searchClear() {
             textSearch.value = "";

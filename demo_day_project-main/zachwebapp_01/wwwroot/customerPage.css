@@ -1,0 +1,65 @@
+body {
+    background-color:#A393BF;
+    text-align: center;
+    border: 5px solid #1E1E24; 
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #648767 !important;
+    border-color: #1E1E24;
+}
+
+.my-header,
+.my-footer {
+    background-color: #648767;
+    text-align: center;
+    color: white;
+}
+
+#text-search {
+    height: 35px;
+    width: 400px; 
+}
+
+.my-right {
+    background-color: CA895F;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.row-login {
+    background-color: #A15E49;
+    height: 300px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #BFC0C0;
+ }
+
+ .table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #838686;
+ }
+
+.table {
+    border: 10px #2F1B25;
+}
+
+h4 {
+    text-align: center;
+    margin: auto;
+    width: 75%;
+}
+
+form {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    width: 75%;
+    margin: auto;
+}

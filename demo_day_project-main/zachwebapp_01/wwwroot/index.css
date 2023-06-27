@@ -1,16 +1,17 @@
 body {
-    background-color:#E3D26F;
+    background-color:#A393BF;
     text-align: center;
+    border: 5px solid #2F1B25; 
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #2F1B25 !important;
-    border-color: #2F1B25;
+    background-color: #648767 !important;
+    border-color: #1E1E24;
 }
 
 .my-header,
 .my-footer {
-    background-color: #CA895F;
+    background-color: #648767;
     text-align: center;
     color: white;
 }
@@ -32,13 +33,28 @@ body {
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: #C2AFF0;
+   background-color: #BFC0C0;
  }
 
  .table-striped>tbody>tr:nth-child(even)>td, 
 .table-striped>tbody>tr:nth-child(even)>th {
-   background-color: #C2AFF0;
+   background-color: #838686;
  }
+
+#deal-table {
+    align-items: center;
+    justify-content: center;
+}
+
+#button-search-clear {
+    margin-right: -20px;
+}
+
+.col-4 {
+    outline-style: solid;
+    outline-color: #1E1E24;
+    outline-offset: -1px;
+}
 
 h4 {
     text-align: center;

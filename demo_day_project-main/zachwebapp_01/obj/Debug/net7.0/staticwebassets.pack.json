@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\contact.html"
     },
     {
+      "Id": "C:\\Users\\zacha\\OneDrive\\Desktop\\demo_day_project-main\\demo_day_project-main\\zachwebapp_01\\wwwroot\\customerPage.css",
+      "PackagePath": "staticwebassets\\customerPage.css"
+    },
+    {
+      "Id": "C:\\Users\\zacha\\OneDrive\\Desktop\\demo_day_project-main\\demo_day_project-main\\zachwebapp_01\\wwwroot\\customerPage.html",
+      "PackagePath": "staticwebassets\\customerPage.html"
+    },
+    {
+      "Id": "C:\\Users\\zacha\\OneDrive\\Desktop\\demo_day_project-main\\demo_day_project-main\\zachwebapp_01\\wwwroot\\customerPage.js",
+      "PackagePath": "staticwebassets\\customerPage.js"
+    },
+    {
       "Id": "C:\\Users\\zacha\\OneDrive\\Desktop\\demo_day_project-main\\demo_day_project-main\\zachwebapp_01\\wwwroot\\deals.html",
       "PackagePath": "staticwebassets\\deals.html"
     },

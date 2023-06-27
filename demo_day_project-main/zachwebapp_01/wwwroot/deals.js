@@ -65,7 +65,7 @@ function zachwebapp_01() {
         };
 
         function showDeals(deals) {
-            var dealTableText = '<table style="text-align: left;" class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
+            var dealTableText = '<table style="text-align: left; border: 1px solid black !important;" class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
     
             for (var i = 0; i < deals.length; i++) {
                 var deal = deals[i];
