@@ -16,7 +16,7 @@ public class CustomerPageController : ControllerBase
 
     [HttpGet]
     [Route("/SearchCustomerDeals")]
-    public Response SearchDeals(string pageSize = "10", string pageNumber = "1", string search = "")
+    public Response SearchDeals(string pageSize = "20", string pageNumber = "1", string search = "")
     {
         Response response = new Response();
         try

@@ -9,11 +9,35 @@ body {
     border-color: #1E1E24;
 }
 
-.my-header,
+.my-header {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #648767;
+    border: 1px solid black;
+    height: 100px;
+    width: 100%;
+    color: white;
+}
+
+.col-12 {
+    color: white !important;
+}
+
 .my-footer {
     background-color: #648767;
     text-align: center;
     color: white;
+}
+
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+.logobig {
+    height: 50px;
+    width: 50px;
 }
 
 .my-right {
@@ -23,7 +47,7 @@ body {
 }
 
 .row-login {
-    background-color: #A15E49;
+    background-color: #A393BF;
     height: 300px;
     display: flex;
     text-align: center;
@@ -48,6 +72,14 @@ body {
 
 #button-search-clear {
     margin-right: -20px;
+}
+
+.btn-info {
+    background-color: #648767 !important;
+    align-items: center;
+    justify-content: center;
+    border-color: #1E1E24;
+    color: white;
 }
 
 .col-4 {

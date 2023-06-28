@@ -64,21 +64,21 @@ function zachwebapp_01() {
             }
         };
 
-        function showDeals(deals) {
-            var dealTableText = '<table style="text-align: left; border: 1px solid black !important;" class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
-    
-            for (var i = 0; i < deals.length; i++) {
-                var deal = deals[i];
-    
-                dealTableText = dealTableText + '<tr><th scope="row">' + deal.dealId + '</th><td>' + deal.restaurantId + '</td><td>' + deal.dayOfWeekId + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.startDate.split(' ')[0] + '</td><td>' + deal.endDate.split(' ')[0] + '</td></tr>'; 
-            }
-    
-            dealTableText = dealTableText + '</tbody></table>';
-    
-            dealTable.innerHTML = dealTableText;
-        };
-
        };
+
+       function showDeals(deals) {
+        var dealTableText = '<table style="text-align: left; border: 1px solid black !important;" class="table table-striped table-sm"><thead><tr><th scope="col">Deal ID</th><th scope="col">RestaurantId</th><th scope="col">DOW ID</th><th scope="col">Deal Name</th><th scope="col">Deal Day</th><th scope="col">Start Date</th><th scope="col">End Date</th></tr></thead><tbody>';
+
+        for (var i = 0; i < deals.length; i++) {
+            var deal = deals[i];
+
+            dealTableText = dealTableText + '<tr><th scope="row">' + deal.dealId + '</th><td>' + deal.restaurantId + '</td><td>' + deal.dayOfWeekId + '</td><td>' + deal.dealName + '</td><td>' + deal.dealDay + '</td><td>' + deal.startDate.split(' ')[0] + '</td><td>' + deal.endDate.split(' ')[0] + '</td></tr>'; 
+        }
+
+        dealTableText = dealTableText + '</tbody></table>';
+
+        dealTable.innerHTML = dealTableText;
+    };
 
         function searchClear() {
             textSearch.value = "";
@@ -117,6 +117,7 @@ function zachwebapp_01() {
                         alert("Server Error: " + xhr.status + " " + xhr.statusText);
                     }
                 }
+                searchDeals();
             };
     
             textRestaurantId.value = "";
@@ -176,6 +177,7 @@ function zachwebapp_01() {
                         alert("Server Error: " + xhr.status + " " + xhr.statusText);
                     }
                 }
+                searchDeals();
             };
     
             textDealId.value = "";
@@ -233,6 +235,7 @@ function zachwebapp_01() {
                         alert("Server Error: " + xhr.status + " " + xhr.statusText);
                     }
                 }
+                searchDeals();
             };
     
             textDealId.value = "";

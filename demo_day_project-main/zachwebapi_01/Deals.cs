@@ -66,7 +66,7 @@ namespace webapi_01
             return deals;
         }
 
-        public static List<Deals> SearchDeals(SqlConnection sqlConnection, string search = "", int pageSize = 10, int pageNumber = 1)
+        public static List<Deals> SearchDeals(SqlConnection sqlConnection, string search = "", int pageSize = 20, int pageNumber = 1)
         {
             List<Deals> deals = new List<Deals>();
 

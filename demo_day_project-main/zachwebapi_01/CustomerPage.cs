@@ -106,7 +106,7 @@ namespace webapi_01
             return customerPage;
         }
 
-        public static List<CustomerPage> SearchTodaysDeals(SqlConnection sqlConnection, string search = "", int pageSize = 10, int pageNumber = 1)
+        public static List<CustomerPage> SearchTodaysDeals(SqlConnection sqlConnection, string search = "", int pageSize = 20, int pageNumber = 1)
         {
             int day = (int)DateTime.Now.DayOfWeek + 1;
 
